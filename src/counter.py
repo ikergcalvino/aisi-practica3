@@ -19,4 +19,4 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'AISI 2021: counter for Roberto Rey Exposito: {} times.\n'.format(count)
+    return 'GEI AISI 2021/2022: counter for [alumno/a] ({} times)\n'.format(count)
