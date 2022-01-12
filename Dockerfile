@@ -1,4 +1,4 @@
-FROM python:3.9.2-alpine
+FROM python:3.10.1-alpine3.15
 ENV FLASK_APP counter.py
 ENV FLASK_RUN_HOST 0.0.0.0
 ENV FLASK_DEBUG True
