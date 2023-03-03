@@ -1,0 +1,28 @@
+# Complete task definition
+- name: Install Docker SDK for Python
+  # Add necessary lines here
+
+- name: Build Docker images from Dockerfiles
+  docker_image:
+    name: "{{ item.name }}"
+    source: XXX
+    build:
+      path: "XXX"
+      pull: XXX
+    state: XXX
+    force_source: yes
+  loop:
+    - { name: "{{ webapp_img }}", directory: webapp }
+    - { name: "{{ db_img }}", directory: db }
+
+- name: Create network
+  docker_network:
+  # Add necessary lines here
+
+- name: Run MySQL container
+  docker_container:
+  # Add necessary lines here
+
+- name: Run Flask container
+  docker_container:
+  # Add necessary lines here

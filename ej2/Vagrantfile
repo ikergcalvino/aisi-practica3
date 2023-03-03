@@ -1,0 +1,35 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require_relative 'provisioning/vbox.rb'
+VBoxUtils.check_version('7.0.6')
+Vagrant.require_version ">= 2.3.4"
+
+class VagrantPlugins::ProviderVirtualBox::Action::Network
+  def dhcp_server_matches_config?(dhcp_server, config)
+    true
+  end
+end
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "xxx-aisi2223/focal64"
+    config.vm.hostname = "xxx-aisi2223-ansible"
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+
+    # Configure hostmanager and vbguest plugins
+    config.hostmanager.enabled = true
+    config.hostmanager.manage_host = false
+    config.hostmanager.manage_guest = true
+    config.vbguest.auto_update = false
+
+    config.vm.provider "virtualbox" do |vb|
+	vb.name = "AISI-P3-EJ2-#{config.vm.hostname}"
+	vb.cpus = 1
+	vb.memory = 1024
+	vb.gui = false
+    end
+
+    config.vm.provision "xxx" do |ansible|
+	# Define provisioner
+    end
+end

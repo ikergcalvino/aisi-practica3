@@ -1,0 +1,13 @@
+# Complete task definition
+- name: Install apache server
+
+- name: Enable rewrite Apache module
+
+- name: Disable Apache default site
+
+- name: Create document root
+
+- name: Copy index.html template page
+
+- name: Setup Apache virtual host
+

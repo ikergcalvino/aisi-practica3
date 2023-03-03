@@ -1,0 +1,10 @@
+# Web application server
+[webapp]
+xxx-aisi2223-webapp
+# Database server
+[db]
+xxx-aisi2223-db
+# Group 'servers' with webapp and db
+[servers:children]
+webapp
+db

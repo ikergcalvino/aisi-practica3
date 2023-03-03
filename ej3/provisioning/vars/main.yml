@@ -1,0 +1,5 @@
+webapp_container: xxx-aisi2223-webapp
+db_container: xxx-aisi2223-db
+webapp_img: xxx-aisi2223-webapp-img
+db_img: xxx-aisi2223-db-img
+network: xxx-aisi2223-network

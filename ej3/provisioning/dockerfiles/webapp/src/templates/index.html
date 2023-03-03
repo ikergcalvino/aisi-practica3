@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset= "utf-8">
+    <title>GEI AISI: Test Page</title>
+    <script type="text/javascript">
+        function getURL() {
+		document.write("URL: " + window.location.href);
+        }
+        function getTIME() {
+        	document.getElementById("current_date").innerHTML = Date();
+    	}
+    </script>
+</head>
+<body>
+  <h2><u>GEI AISI 2022/2023: Flask+MySQL on Docker</u></h2>
+  <h2><script>getURL();</script></h2>
+  <h2><div id="current_date"><script>getTIME();</script></h2>
+  <h2>MySQL URI: {{ db_uri }}</h2>
+  <h2>MySQL connection status: {{ result }}</h2>
+</body>
+</html>
