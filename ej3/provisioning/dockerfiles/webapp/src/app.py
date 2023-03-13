@@ -7,7 +7,7 @@ from sqlalchemy import create_engine,text
 app = Flask(__name__)
 
 # Modify db_host for configuring MySQL connection
-db_host = 'rre-aisi2223-db'
+db_host = 'xxx-aisi2223-db'
 # URI format: mysql://username:password@server:port/db_name
 db_uri = 'mysql://flask:flask@%s/database' % (db_host)
 
