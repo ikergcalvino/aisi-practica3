@@ -9,7 +9,7 @@
     name: "{{ item.name }}"
     source: build
     build:
-      path: "{{ item.directory }}"
+      path: "/vagrant/provisioning/dockerfiles/{{ item.directory }}"
       pull: true
     state: present
     force_source: yes
@@ -27,7 +27,7 @@
   docker_container:
   # Add necessary lines here
     name: "{{ db_container }}"
-    image: "{{ db_image }}"
+    image: "{{ db_img }}"
     purge_networks: true
 
 - name: Run Flask container
