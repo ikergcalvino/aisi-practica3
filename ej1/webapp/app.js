@@ -4,10 +4,10 @@ var app = express();
 
 app.get('/', function(req, res) {
     var connection = mysql.createConnection({
-      host     : "xxx-aisi2223-db",
-      user     : "xxx-aisi2223",
+      host     : "idc-aisi2223-db",
+      user     : "idc-aisi2223",
       password : "12345",
-      database : "xxx-aisi2223-database"
+      database : "idc-aisi2223-database"
     });
 
     var url = req.protocol + '://' + req.get('host') + req.originalUrl;

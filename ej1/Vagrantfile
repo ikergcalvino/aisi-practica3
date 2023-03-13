@@ -11,11 +11,11 @@ class VagrantPlugins::ProviderVirtualBox::Action::Network
 end
 
 # Ansible controller
-ansible_controller_hostname = "xxx-aisi2223-ansible"
+ansible_controller_hostname = "idc-aisi2223-ansible"
 # Web application server
-webapp_hostname = "xxx-aisi2223-webapp"
+webapp_hostname = "idc-aisi2223-webapp"
 # Database server
-db_hostname = "xxx-aisi2223-db"
+db_hostname = "idc-aisi2223-db"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/rocky8"
