@@ -29,6 +29,8 @@
     name: "{{ db_container }}"
     image: "{{ db_img }}"
     purge_networks: true
+    networks:
+      - name: "{{ network }}"
 
 - name: Run Flask container
   docker_container:
@@ -36,4 +38,6 @@
     name: "{{ webapp_container }}"
     image: "{{ webapp_img }}"
     purge_networks: true
+    networks:
+      - name: "{{ network }}"
     ports: 80:5000
