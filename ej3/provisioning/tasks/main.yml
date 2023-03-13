@@ -1,15 +1,17 @@
 # Complete task definition
 - name: Install Docker SDK for Python
   # Add necessary lines here
+  package:
+    name: python3-docker
 
 - name: Build Docker images from Dockerfiles
   docker_image:
     name: "{{ item.name }}"
-    source: XXX
+    source: build
     build:
-      path: "XXX"
-      pull: XXX
-    state: XXX
+      path: "{{ item.directory }}"
+      pull: true
+    state: present
     force_source: yes
   loop:
     - { name: "{{ webapp_img }}", directory: webapp }
@@ -18,11 +20,20 @@
 - name: Create network
   docker_network:
   # Add necessary lines here
+    name: "{{ network }}"
+    driver: "bridge"
 
 - name: Run MySQL container
   docker_container:
   # Add necessary lines here
+    name: "{{ db_container }}"
+    image: "{{ db_image }}"
+    purge_networks: true
 
 - name: Run Flask container
   docker_container:
   # Add necessary lines here
+    name: "{{ webapp_container }}"
+    image: "{{ webapp_img }}"
+    purge_networks: true
+    ports: 80:5000
