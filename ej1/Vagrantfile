@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
     ansible.vm.provision "shell", run: "once", path: "provisioning/ansible-controller.sh"
 
     ansible.vm.provider "virtualbox" do |prov|
-	prov.name = "AISI-P3-EJ1-#{ansible.vm.hostname}"
+    prov.name = "AISI-P3-EJ1-#{ansible.vm.hostname}"
         prov.cpus = 1
         prov.memory = 1024
         prov.gui = false
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
     app.vm.provision "shell", run: "once", path: "provisioning/servers.sh"
 
     app.vm.provider "virtualbox" do |prov|
-	prov.name = "AISI-P3-EJ1-#{app.vm.hostname}"
+    prov.name = "AISI-P3-EJ1-#{app.vm.hostname}"
         prov.cpus = 1
         prov.memory = 1024
         prov.gui = false
@@ -65,7 +65,7 @@ Vagrant.configure("2") do |config|
     db.vm.provision "shell", run: "once", path: "provisioning/servers.sh"
 
     db.vm.provider "virtualbox" do |prov|
-	prov.name = "AISI-P3-EJ1-#{db.vm.hostname}"
+    prov.name = "AISI-P3-EJ1-#{db.vm.hostname}"
         prov.cpus = 1
         prov.memory = 1024
         prov.gui = false

@@ -13,10 +13,10 @@ app.get('/', function(req, res) {
     var url = req.protocol + '://' + req.get('host') + req.originalUrl;
 
     connection.connect(function(err) {
-	var msg = '<h2><u>GEI AISI 2022/2023: Node.js+Express+MariaDB</u>\n<p>URL: ' +url+ '\n<p> ' +new Date()+ '\n<p>MariaDB connection from user ' +connection.config.user+ ': ';
+    var msg = '<h2><u>GEI AISI 2022/2023: Node.js+Express+MariaDB</u>\n<p>URL: ' +url+ '\n<p> ' +new Date()+ '\n<p>MariaDB connection from user ' +connection.config.user+ ': ';
 
         if(!err) {
-	    res.type('text/html').send(msg+ '<span style="color: green;">PASSED</span>\n');
+        res.type('text/html').send(msg+ '<span style="color: green;">PASSED</span>\n');
         } else {
             res.type('text/html').send(msg+ '<span style="color: red;">FAILED</span>\n<p>'+err+'\n');
         }
