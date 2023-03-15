@@ -1,3 +1,4 @@
-/ej1/.vagrant
-/ej1/provisioning/id_rsa.pub
-/ej3/.vagrant
+.vagrant/
+output-aisi/
+*.vmdk
+*.pub
