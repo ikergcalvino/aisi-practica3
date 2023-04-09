@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
         # Define provisioner
         ansible.become = true
         ansible.install_mode = "pip3"
-        ansible.galaxy_role_file = "requirements.yml"
+        ansible.galaxy_role_file = "provisioning/requirements.yml"
         ansible.galaxy_roles_path = "/home/vagrant/roles"
         ansible.playbook = "provisioning/playbook.yml"
     end
